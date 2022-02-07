@@ -1,0 +1,729 @@
+******************************************************************************
+             TMS320C2000 Linker Unix v21.6.0                   
+******************************************************************************
+>> Linked Mon Feb  7 22:19:48 2022
+
+OUTPUT FILE NAME:   <tm3n.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00084511
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  RAMM0                 00000122   000002de  00000000  000002de  RWIX
+  RAMLS0                00008000   00000800  00000004  000007fc  RWIX
+  RAMLS1                00008800   00000800  00000000  00000800  RWIX
+  RAMLS2                00009000   00000800  00000000  00000800  RWIX
+  RAMLS3                00009800   00000800  00000000  00000800  RWIX
+  RAMLS4                0000a000   00000800  00000000  00000800  RWIX
+  RAMD0                 0000b000   00000800  00000000  00000800  RWIX
+  RAMGS14               0001a000   00001000  00000000  00001000  RWIX
+  RAMGS15               0001b000   00001000  00000000  00001000  RWIX
+  BEGIN                 00080000   00000002  00000002  00000000  RWIX
+  FLASHA                00080002   00001ffe  00000000  00001ffe  RWIX
+  FLASHB                00082000   00002000  00001fff  00000001  RWIX
+  FLASHC                00084000   00002000  000006e9  00001917  RWIX
+  FLASHD                00086000   00002000  00000004  00001ffc  RWIX
+  FLASHE                00088000   00008000  00000000  00008000  RWIX
+  FLASHF                00090000   00008000  0000018d  00007e73  RWIX
+  FLASHG                00098000   00008000  00000000  00008000  RWIX
+  FLASHH                000a0000   00008000  00000000  00008000  RWIX
+  FLASHI                000a8000   00008000  00000000  00008000  RWIX
+  FLASHJ                000b0000   00008000  00000000  00008000  RWIX
+  FLASHK                000b8000   00002000  00000000  00002000  RWIX
+  FLASHL                000ba000   00002000  00000000  00002000  RWIX
+  FLASHM                000bc000   00002000  00000000  00002000  RWIX
+  FLASHN                000be000   00002000  00000000  00002000  RWIX
+  RESET                 003fffc0   00000002  00000000  00000002  RWIX
+
+PAGE 1:
+  BOOT_RSVD             00000002   00000120  00000000  00000120  RWIX
+  RAMM1                 00000400   00000400  00000200  00000200  RWIX
+  RAMLS5                0000a800   00000800  00000471  0000038f  RWIX
+  RAMD1                 0000b800   00000800  00000000  00000800  RWIX
+  RAMGS0                0000c000   00001000  00000000  00001000  RWIX
+  RAMGS1                0000d000   00001000  00000000  00001000  RWIX
+  RAMGS2                0000e000   00001000  00000000  00001000  RWIX
+  RAMGS3                0000f000   00001000  00000000  00001000  RWIX
+  RAMGS4                00010000   00001000  00000000  00001000  RWIX
+  RAMGS5                00011000   00001000  00000000  00001000  RWIX
+  RAMGS6                00012000   00001000  00000000  00001000  RWIX
+  RAMGS7                00013000   00001000  00000000  00001000  RWIX
+  RAMGS8                00014000   00001000  00000000  00001000  RWIX
+  RAMGS9                00015000   00001000  00000000  00001000  RWIX
+  RAMGS10               00016000   00001000  00000000  00001000  RWIX
+  RAMGS11               00017000   00001000  00000000  00001000  RWIX
+  RAMGS12               00018000   00001000  00000000  00001000  RWIX
+  RAMGS13               00019000   00001000  00000000  00001000  RWIX
+  CPU2TOCPU1RAM         0003f800   00000400  00000000  00000400  RWIX
+  CPU1TOCPU2RAM         0003fc00   00000400  00000000  00000400  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.cinit     0    00082000    000000a3     
+                  00082000    00000040     main.obj (.cinit)
+                  00082040    0000000f     device.obj (.cinit)
+                  0008204f    0000000e     rts2800_fpu32.lib : exit.c.obj (.cinit)
+                  0008205d    0000000b     main.obj (.cinit:_adcHandle)
+                  00082068    00000009     scheduler.obj (.cinit:_functions__9Scheduler)
+                  00082071    00000009     scheduler.obj (.cinit:_periods__9Scheduler)
+                  0008207a    00000009     main.obj (.cinit:_pwmHandle)
+                  00082083    00000007     main.obj (.cinit:_adcChannel)
+                  0008208a    00000005     rts2800_fpu32.lib : _lock.c.obj (.cinit:__lock)
+                  0008208f    00000005                       : _lock.c.obj (.cinit:__unlock)
+                  00082094    00000005                       : vars.c.obj (.cinit)
+                  00082099    00000004                       : errno.c.obj (.cinit)
+                  0008209d    00000004                       : memory.c.obj (.cinit)
+                  000820a1    00000002     --HOLE-- [fill = 0]
+
+.pinit     0    00082000    00000000     UNINITIALIZED
+
+codestart 
+*          0    00080000    00000002     
+                  00080000    00000002     F2837xD_CodeStartBranch.obj (codestart)
+
+.TI.ramfunc 
+*          0    00086000    00000004     RUN ADDR = 00008000
+                  00086000    00000004     sysctl.obj (.TI.ramfunc)
+
+.stack     1    00000400    00000200     UNINITIALIZED
+                  00000400    00000200     --HOLE--
+
+.esysmem   1    0000a800    00000400     UNINITIALIZED
+                  0000a800    00000004     rts2800_fpu32.lib : memory.c.obj (.esysmem)
+                  0000a804    000003fc     --HOLE--
+
+.reset     0    003fffc0    00000002     DSECT
+                  003fffc0    00000002     rts2800_fpu32.lib : boot28.asm.obj (.reset)
+
+GETBUFFER 
+*          0    0003f800    00000000     DSECT
+
+GETWRITEIDX 
+*          0    0003f800    00000000     DSECT
+
+PUTREADIDX 
+*          0    0003f800    00000000     DSECT
+
+.TI.memcrc 
+*          0    00000000    00000060     COPY SECTION
+                  00000000    00000060     (.TI.memcrc:_table_name)
+
+.text.1    0    000820a4    00001f5c     
+                  000820a4    000009c6     main.obj (.text)
+                  00082a6a    00000580     sysctl.obj (.text)
+                  00082fea    000003d8     device.obj (.text)
+                  000833c2    0000030b     can.obj (.text)
+                  000836cd    000002d3     gatedriver.obj (.text)
+                  000839a0    0000028c     rts2800_fpu32.lib : memory.c.obj (.text)
+                  00083c2c    000001eb     gpio.obj (.text)
+                  00083e17    00000185     interrupt.obj (.text)
+                  00083f9c    00000063     rts2800_fpu32.lib : s_cosf.c.obj (.text)
+                  00083fff    00000001                       : newhandler.c.obj (.text)
+
+.text.2    0    00084000    000006e9     
+                  00084000    00000123     scheduler.obj (.text)
+                  00084123    000000d8     spi.obj (.text)
+                  000841fb    000000d4     adc.obj (.text)
+                  000842cf    000000cb     spidriver.obj (.text)
+                  0008439a    00000096     scheduler.obj (.text:retain)
+                  00084430    00000088     rts2800_fpu32.lib : fs_div28.asm.obj (.text)
+                  000844b8    00000059                       : s_sinf.c.obj (.text)
+                  00084511    00000056                       : boot28.asm.obj (.text)
+                  00084567    00000053     digio.obj (.text)
+                  000845ba    00000041     main.obj (.text:retain)
+                  000845fb    00000029     rts2800_fpu32.lib : exit.c.obj (.text)
+                  00084624    00000027                       : e_sqrtf.c.obj (.text)
+                  0008464b    00000024                       : cpy_tbl.c.obj (.text)
+                  0008466f    00000021                       : new.c.obj (.text)
+                  00084690    0000001d                       : memcpy.c.obj (.text)
+                  000846ad    00000012                       : args_main.c.obj (.text)
+                  000846bf    0000000a     cputimer.obj (.text)
+                  000846c9    00000009     rts2800_fpu32.lib : _lock.c.obj (.text)
+                  000846d2    00000008     F2837xD_CodeStartBranch.obj (.text)
+                  000846da    00000007     rts2800_fpu32.lib : memset.c.obj (.text)
+                  000846e1    00000005                       : delete.c.obj (.text)
+                  000846e6    00000002                       : pre_init.c.obj (.text)
+                  000846e8    00000001                       : startup.c.obj (.text)
+
+.econst    0    00090000    0000018d     
+                  00090000    00000100     crc8.obj (.econst:_crc_table)
+                  00090100    00000040     main.obj (.econst:_WatchdogResponses)
+                  00090140    0000001c     main.obj (.econst:_RegisterConfig)
+                  0009015c    00000018     gatedriver.obj (.econst:_GateDriverRegisterSetup__17TeslaM3GateDriver)
+                  00090174    00000006     scheduler.obj (.econst:_cpuTimerBases)
+                  0009017a    00000006     scheduler.obj (.econst:_interruptTimers)
+                  00090180    00000003     gatedriver.obj (.econst:_$P$T1$1)
+                  00090183    00000003     gatedriver.obj (.econst:_$P$T2$2)
+                  00090186    00000003     gatedriver.obj (.econst:_$P$T3$3)
+                  00090189    00000003     gatedriver.obj (.econst:_NullGateDriverRegister__17TeslaM3GateDriver)
+                  0009018c    00000001     gatedriver.obj (.econst)
+
+.ebss      1    0000ac00    00000071     UNINITIALIZED
+                  0000ac00    00000022     main.obj (.ebss)
+                  0000ac22    0000000c     main.obj (.ebss:_thetas)
+                  0000ac2e    00000008     main.obj (.ebss:_adcHandle)
+                  0000ac36    00000008     main.obj (.ebss:_canTxMsgData)
+                  0000ac3e    00000002     rts2800_fpu32.lib : _lock.c.obj (.ebss:__lock)
+                  0000ac40    00000006     scheduler.obj (.ebss:_functions__9Scheduler)
+                  0000ac46    00000006     scheduler.obj (.ebss:_periods__9Scheduler)
+                  0000ac4c    00000006     main.obj (.ebss:_pwmHandle)
+                  0000ac52    00000006     device.obj (.ebss)
+                  0000ac58    00000006     digio.obj (.ebss)
+                  0000ac5e    00000006     rts2800_fpu32.lib : exit.c.obj (.ebss)
+                  0000ac64    00000004     main.obj (.ebss:_adcChannel)
+                  0000ac68    00000004     rts2800_fpu32.lib : memory.c.obj (.ebss)
+                  0000ac6c    00000002                       : _lock.c.obj (.ebss:__unlock)
+                  0000ac6e    00000002                       : vars.c.obj (.ebss)
+                  0000ac70    00000001                       : errno.c.obj (.ebss)
+
+MODULE SUMMARY
+
+       Module                        code   initialized data   uninitialized data
+       ------                        ----   ----------------   ------------------
+    ./
+       main.obj                      2567   183                72                
+       gatedriver.obj                723    37                 0                 
+       scheduler.obj                 441    30                 12                
+       spidriver.obj                 203    0                  0                 
+    +--+-----------------------------+------+------------------+--------------------+
+       Total:                        3934   250                84                
+                                                                                 
+    ./device_support/
+       device.obj                    984    15                 6                 
+       F2837xD_CodeStartBranch.obj   10     0                  0                 
+    +--+-----------------------------+------+------------------+--------------------+
+       Total:                        994    15                 6                 
+                                                                                 
+    ./drivelib/
+       sysctl.obj                    1416   0                  0                 
+       can.obj                       779    0                  0                 
+       gpio.obj                      491    0                  0                 
+       interrupt.obj                 389    0                  0                 
+       spi.obj                       216    0                  0                 
+       adc.obj                       212    0                  0                 
+       cputimer.obj                  10     0                  0                 
+    +--+-----------------------------+------+------------------+--------------------+
+       Total:                        3513   0                  0                 
+                                                                                 
+    ./libinverter/
+       crc8.obj                      0      256                0                 
+       digio.obj                     83     0                  6                 
+    +--+-----------------------------+------+------------------+--------------------+
+       Total:                        83     256                6                 
+                                                                                 
+    /Applications/ti/ccs1110/ccs/tools/compiler/ti-cgt-c2000_21.6.0.LTS/lib/rts2800_fpu32.lib
+       memory.c.obj                  652    4                  4                 
+       fs_div28.asm.obj              136    0                  0                 
+       s_cosf.c.obj                  99     0                  0                 
+       s_sinf.c.obj                  89     0                  0                 
+       boot28.asm.obj                86     0                  0                 
+       exit.c.obj                    41     14                 6                 
+       e_sqrtf.c.obj                 39     0                  0                 
+       cpy_tbl.c.obj                 36     0                  0                 
+       new.c.obj                     33     0                  0                 
+       memcpy.c.obj                  29     0                  0                 
+       _lock.c.obj                   9      10                 4                 
+       args_main.c.obj               18     0                  0                 
+       memset.c.obj                  7      0                  0                 
+       vars.c.obj                    0      5                  2                 
+       delete.c.obj                  5      0                  0                 
+       errno.c.obj                   0      4                  1                 
+       pre_init.c.obj                2      0                  0                 
+       newhandler.c.obj              1      0                  0                 
+       startup.c.obj                 1      0                  0                 
+    +--+-----------------------------+------+------------------+--------------------+
+       Total:                        1283   37                 17                
+                                                                                 
+       Heap:                         0      0                  1024              
+       Stack:                        0      0                  512               
+    +--+-----------------------------+------+------------------+--------------------+
+       Grand Total:                  9807   558                1649              
+
+
+LINKER GENERATED MEMRANGE CRC TABLES
+
+_table_name @ 00000000 records: 15, size/record: 6, table size: 96, algorithm=C28_CHECKSUM_16(ID=13), CRC: 00009a1e
+	BEGIN: page=0, load addr=00080000, size=00000002
+	FLASHA: page=0, load addr=00080002, size=00001ffe
+	FLASHB: page=0, load addr=00082000, size=00002000
+	FLASHC: page=0, load addr=00084000, size=00002000
+	FLASHD: page=0, load addr=00086000, size=00002000
+	FLASHE: page=0, load addr=00088000, size=00008000
+	FLASHF: page=0, load addr=00090000, size=00008000
+	FLASHG: page=0, load addr=00098000, size=00008000
+	FLASHH: page=0, load addr=000a0000, size=00008000
+	FLASHI: page=0, load addr=000a8000, size=00008000
+	FLASHJ: page=0, load addr=000b0000, size=00008000
+	FLASHK: page=0, load addr=000b8000, size=00002000
+	FLASHL: page=0, load addr=000ba000, size=00002000
+	FLASHM: page=0, load addr=000bc000, size=00002000
+	FLASHN: page=0, load addr=000be000, size=00002000
+
+
+GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
+
+address     data page           name
+--------    ----------------    ----
+00000400      10 (00000400)     __stack
+
+0000a800     2a0 (0000a800)     __sys_memory
+
+0000ac00     2b0 (0000ac00)     _theta_pos
+0000ac01     2b0 (0000ac00)     _a
+0000ac02     2b0 (0000ac00)     _b
+0000ac03     2b0 (0000ac00)     _c
+0000ac04     2b0 (0000ac00)     _cnt
+0000ac05     2b0 (0000ac00)     _lastFunctionalWatchdogQuest__39TeslaM3PowerWatchdog__tm__11_9SpiDriver
+0000ac06     2b0 (0000ac00)     _targetSpeed
+0000ac08     2b0 (0000ac00)     _theta
+0000ac0a     2b0 (0000ac00)     _iMeasureU
+0000ac0c     2b0 (0000ac00)     _iMeasureV
+0000ac0e     2b0 (0000ac00)     _iMeasureW
+0000ac10     2b0 (0000ac00)     _iMeasureDCV
+0000ac12     2b0 (0000ac00)     _id
+0000ac14     2b0 (0000ac00)     _iq
+0000ac16     2b0 (0000ac00)     _targetIq
+0000ac18     2b0 (0000ac00)     _targetId
+0000ac1a     2b0 (0000ac00)     _maxModIndex
+0000ac1c     2b0 (0000ac00)     _carrierMid
+0000ac1e     2b0 (0000ac00)     _canTxMsgCount
+0000ac20     2b0 (0000ac00)     _minPwm
+0000ac22     2b0 (0000ac00)     _thetas
+0000ac2e     2b0 (0000ac00)     _adcHandle
+0000ac36     2b0 (0000ac00)     _canTxMsgData
+0000ac3e     2b0 (0000ac00)     __lock
+
+0000ac40     2b1 (0000ac40)     _functions__9Scheduler
+0000ac46     2b1 (0000ac40)     _periods__9Scheduler
+0000ac4c     2b1 (0000ac40)     _pwmHandle
+0000ac52     2b1 (0000ac40)     _Example_Result
+0000ac54     2b1 (0000ac40)     _Example_PassCount
+0000ac56     2b1 (0000ac40)     _Example_Fail
+0000ac58     2b1 (0000ac40)     _vtg_out__5DigIo
+0000ac5a     2b1 (0000ac40)     _launchpad_gate__5DigIo
+0000ac5c     2b1 (0000ac40)     _led_out__5DigIo
+0000ac5e     2b1 (0000ac40)     ___TI_enable_exit_profile_output
+0000ac60     2b1 (0000ac40)     ___TI_cleanup_ptr
+0000ac62     2b1 (0000ac40)     ___TI_dtors_ptr
+0000ac64     2b1 (0000ac40)     _adcChannel
+0000ac6c     2b1 (0000ac40)     __unlock
+0000ac6e     2b1 (0000ac40)     __new_handler
+0000ac70     2b1 (0000ac40)     _errno
+
+00090000    2400 (00090000)     _crc_table
+
+0009015c    2405 (00090140)     _GateDriverRegisterSetup__17TeslaM3GateDriver
+
+00090189    2406 (00090180)     _NullGateDriverRegister__17TeslaM3GateDriver
+0009018c    2406 (00090180)     _RegisterSetupSize__17TeslaM3GateDriver
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+page  address   name                                                                   
+----  -------   ----                                                                   
+abs   ffffffff  .text                                                                  
+0     000845fb  C$$EXIT                                                                
+0     00084430  FS$$DIV                                                                
+0     000841fb  _ADC_setMode                                                           
+0     0008429d  _ADC_setPPBTripLimits                                                  
+0     0008406a  _AddTask__9SchedulerSFPFv_vUl                                          
+0     00083498  _CAN_clearInterruptStatus                                              
+0     000836a8  _CAN_clearMessage                                                      
+0     00083407  _CAN_initModule                                                        
+0     000835d2  _CAN_readMessage                                                       
+0     0008362b  _CAN_readMessageWithID                                                 
+0     00083586  _CAN_sendMessage                                                       
+0     0008341c  _CAN_setBitRate                                                        
+0     00083460  _CAN_setBitTiming                                                      
+0     000834c9  _CAN_setupMessageObject                                                
+0     00083662  _CAN_transferMessage                                                   
+0     000846bf  _CPUTimer_setEmulationMode                                             
+0     00084103  _ConfigureCPUTimer__9SchedulerSFUlT1                                   
+0     0008458d  _Configure__5DigIoFUlQ2_7PinMode7PinMode                               
+0     00083236  _Device_bootCPU2                                                       
+0     00083205  _Device_configureTMXAnalogTrim                                         
+0     000830b3  _Device_enableAllPeripherals                                           
+0     000831ef  _Device_enableUnbondedGPIOPullups                                      
+0     000831d2  _Device_enableUnbondedGPIOPullupsFor100Pin                             
+0     000831bf  _Device_enableUnbondedGPIOPullupsFor176Pin                             
+0     00083095  _Device_init                                                           
+0     0008319e  _Device_initGPIO                                                       
+1     0000ac56  _Example_Fail                                                          
+1     0000ac54  _Example_PassCount                                                     
+1     0000ac52  _Example_Result                                                        
+0     000833c1  _Example_done                                                          
+0     000833bc  _Example_setResultFail                                                 
+0     000833b7  _Example_setResultPass                                                 
+0     00083c60  _GPIO_getDirectionMode                                                 
+0     00083ce9  _GPIO_getPadConfig                                                     
+0     00083d49  _GPIO_getQualificationMode                                             
+0     00083db8  _GPIO_setAnalogMode                                                    
+0     00083c39  _GPIO_setDirectionMode                                                 
+0     00083c76  _GPIO_setInterruptPin                                                  
+0     00083d8c  _GPIO_setMasterCore                                                    
+0     00083ca1  _GPIO_setPadConfig                                                     
+0     00083de0  _GPIO_setPinConfig                                                     
+0     00083d1d  _GPIO_setQualificationMode                                             
+0     00083d6a  _GPIO_setQualificationPeriod                                           
+0     0009015c  _GateDriverRegisterSetup__17TeslaM3GateDriver                          
+0     00082637  _InitADC__Fv                                                           
+0     000840cb  _InitCPUTimers__9SchedulerSFv                                          
+0     000827d8  _InitCan__Fv                                                           
+0     000826c5  _InitEnginePWM__Fv                                                     
+0     000837c2  _InitGPIOs__17TeslaM3GateDriverSFv                                     
+0     00084314  _InitGPIOs__9SpiDriverSFv                                              
+0     000826b0  _InitMotorCtrlInterrupt__Fv                                            
+0     00082619  _InitParams__Fv                                                        
+0     0008380c  _InitSPIPort__17TeslaM3GateDriverSFv                                   
+0     0008435f  _InitSPIPort__9SpiDriverSFv                                            
+0     000825f2  _InitThetas__Fv                                                        
+0     00083766  _Init__17TeslaM3GateDriverSFv                                          
+0     00084052  _Init__9SchedulerSFv                                                   
+0     00083f51  _Interrupt_disable                                                     
+0     00083f1d  _Interrupt_enable                                                      
+0     00083ec2  _Interrupt_initModule                                                  
+0     00083eff  _Interrupt_initVectorTable                                             
+0     00083773  _IsFaulty__17TeslaM3GateDriverSFv                                      
+0     00090189  _NullGateDriverRegister__17TeslaM3GateDriver                           
+0     000827ee  _PinMux_init__Fv                                                       
+0     00086004  _RamfuncsLoadEnd                                                       
+abs   00000004  _RamfuncsLoadSize                                                      
+0     00086000  _RamfuncsLoadStart                                                     
+0     00008004  _RamfuncsRunEnd                                                        
+abs   00000004  _RamfuncsRunSize                                                       
+0     00008000  _RamfuncsRunStart                                                      
+0     00084394  _ReadData__9SpiDriverSFv                                               
+0     0009018c  _RegisterSetupSize__17TeslaM3GateDriver                                
+0     000841ce  _SPI_clearInterruptStatus                                              
+0     00084183  _SPI_disableInterrupt                                                  
+0     0008415d  _SPI_enableInterrupt                                                   
+0     000841a9  _SPI_getInterruptStatus                                                
+0     0008414c  _SPI_setBaudRate                                                       
+0     00084123  _SPI_setConfig                                                         
+0     000838ab  _SendCommand__17TeslaM3GateDriverSFUi                                  
+0     00083839  _SetupGateDrivers__17TeslaM3GateDriverSFv                              
+0     00008000  _SysCtl_delay                                                          
+0     00082b4c  _SysCtl_getAuxClock                                                    
+0     00082afb  _SysCtl_getClock                                                       
+0     00082f82  _SysCtl_getDeviceParametric                                            
+0     00082f68  _SysCtl_getLowSpeedClock                                               
+0     00082f03  _SysCtl_selectOscSource                                                
+0     00082f39  _SysCtl_selectOscSourceAuxPLL                                          
+0     00082e9a  _SysCtl_selectXTAL                                                     
+0     00082d87  _SysCtl_setAuxClock                                                    
+0     00082b8d  _SysCtl_setClock                                                       
+0     00083866  _VerifyGateDriverConfig__17TeslaM3GateDriverSFv                        
+0     0008438a  _WriteData__9SpiDriverSFUi                                             
+1     00000600  __STACK_END                                                            
+abs   00000200  __STACK_SIZE                                                           
+abs   00000400  __SYSMEM_SIZE                                                          
+0     00000000  __TI_MEMRANGE_CRC__table_name                                          
+0     000838d2  ___CPR69__WriteRegister__17TeslaM3GateDriverSFRCQ2_J15J8Register       
+0     0008394e  ___CPR72__VerifyRegister__17TeslaM3GateDriverSFRCQ2_J16J8RegisterT1    
+1     0000ac60  ___TI_cleanup_ptr                                                      
+1     0000ac62  ___TI_dtors_ptr                                                        
+1     0000ac5e  ___TI_enable_exit_profile_output                                       
+0     00083c2a  ___TI_heap_check                                                       
+0     00083c0d  ___TI_heap_largest_available                                           
+0     00083bf0  ___TI_heap_total_available                                             
+abs   ffffffff  ___TI_pprof_out_hndl                                                   
+abs   ffffffff  ___TI_prof_data_size                                                   
+abs   ffffffff  ___TI_prof_data_start                                                  
+abs   ffffffff  ___binit__                                                             
+abs   ffffffff  ___c_args__                                                            
+0     00082000  ___cinit__                                                             
+0     00083fff  ___default_new_handler__Fv                                             
+0     000846e1  ___dl__FPv                                                             
+0     000833b0  ___error__                                                             
+abs   ffffffff  ___etext__                                                             
+0     0008466f  ___nw__FUl                                                             
+abs   ffffffff  ___pinit__                                                             
+abs   ffffffff  ___text__                                                              
+0     000846ad  __args_main                                                            
+1     0000ac3e  __lock                                                                 
+1     0000ac6e  __new_handler                                                          
+0     000846d1  __nop                                                                  
+0     000846cd  __register_lock                                                        
+0     000846c9  __register_unlock                                                      
+1     00000400  __stack                                                                
+1     0000a800  __sys_memory                                                           
+0     000846e8  __system_post_cinit                                                    
+0     000846e6  __system_pre_init                                                      
+1     0000ac6c  __unlock                                                               
+1     0000ac01  _a                                                                     
+0     000845fb  _abort                                                                 
+1     0000ac64  _adcChannel                                                            
+1     0000ac2e  _adcHandle                                                             
+0     00083b4a  _aligned_alloc                                                         
+1     0000ac02  _b                                                                     
+1     0000ac03  _c                                                                     
+0     00084511  _c_int00                                                               
+0     00083b1d  _calloc                                                                
+1     0000ac1e  _canTxMsgCount                                                         
+1     0000ac36  _canTxMsgData                                                          
+1     0000ac1c  _carrierMid                                                            
+1     0000ac04  _cnt                                                                   
+0     0008464b  _copy_in                                                               
+0     00083f9c  _cos                                                                   
+0     00083f9c  _cosf                                                                  
+0     0008439a  _cpuTimer0ISR                                                          
+0     000843ce  _cpuTimer1ISR                                                          
+0     000843ff  _cpuTimer2ISR                                                          
+0     00090000  _crc_table                                                             
+0     000845ba  _engineCtrlISR__Fv                                                     
+1     0000ac70  _errno                                                                 
+0     000845fd  _exit                                                                  
+0     000839cb  _free                                                                  
+1     0000ac40  _functions__9Scheduler                                                 
+0     00082931  _getCurrentMeasurement__Fv                                             
+0     00082979  _getHDCV__Fv                                                           
+0     0008298f  _getTheta__Fv                                                          
+1     0000ac10  _iMeasureDCV                                                           
+1     0000ac0a  _iMeasureU                                                             
+1     0000ac0c  _iMeasureV                                                             
+1     0000ac0e  _iMeasureW                                                             
+1     0000ac12  _id                                                                    
+1     0000ac14  _iq                                                                    
+1     0000ac05  _lastFunctionalWatchdogQuest__39TeslaM3PowerWatchdog__tm__11_9SpiDriver
+1     0000ac5a  _launchpad_gate__5DigIo                                                
+1     0000ac5c  _led_out__5DigIo                                                       
+0     000829b5  _main                                                                  
+0     000839a0  _malloc                                                                
+1     0000ac1a  _maxModIndex                                                           
+0     00083b4a  _memalign                                                              
+0     00084690  _memcpy                                                                
+0     000846da  _memset                                                                
+1     0000ac20  _minPwm                                                                
+0     00083b19  _minit                                                                 
+1     0000ac46  _periods__9Scheduler                                                   
+1     0000ac4c  _pwmHandle                                                             
+0     00083a95  _realloc                                                               
+0     00082817  _runControl__Fv                                                        
+0     000844b8  _sin                                                                   
+0     000844b8  _sinf                                                                  
+0     00084624  _sqrt                                                                  
+0     00084624  _sqrtf                                                                 
+0     00000000  _table_name                                                            
+1     0000ac18  _targetId                                                              
+1     0000ac16  _targetIq                                                              
+1     0000ac06  _targetSpeed                                                           
+1     0000ac08  _theta                                                                 
+1     0000ac00  _theta_pos                                                             
+1     0000ac22  _thetas                                                                
+1     0000ac58  _vtg_out__5DigIo                                                       
+abs   ffffffff  binit                                                                  
+0     00082000  cinit                                                                  
+0     00080000  code_start                                                             
+abs   ffffffff  etext                                                                  
+abs   ffffffff  pinit                                                                  
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+page  address   name                                                                   
+----  -------   ----                                                                   
+0     00000000  __TI_MEMRANGE_CRC__table_name                                          
+0     00000000  _table_name                                                            
+0     00008000  _RamfuncsRunStart                                                      
+0     00008000  _SysCtl_delay                                                          
+0     00008004  _RamfuncsRunEnd                                                        
+0     00080000  code_start                                                             
+0     00082000  ___cinit__                                                             
+0     00082000  cinit                                                                  
+0     000825f2  _InitThetas__Fv                                                        
+0     00082619  _InitParams__Fv                                                        
+0     00082637  _InitADC__Fv                                                           
+0     000826b0  _InitMotorCtrlInterrupt__Fv                                            
+0     000826c5  _InitEnginePWM__Fv                                                     
+0     000827d8  _InitCan__Fv                                                           
+0     000827ee  _PinMux_init__Fv                                                       
+0     00082817  _runControl__Fv                                                        
+0     00082931  _getCurrentMeasurement__Fv                                             
+0     00082979  _getHDCV__Fv                                                           
+0     0008298f  _getTheta__Fv                                                          
+0     000829b5  _main                                                                  
+0     00082afb  _SysCtl_getClock                                                       
+0     00082b4c  _SysCtl_getAuxClock                                                    
+0     00082b8d  _SysCtl_setClock                                                       
+0     00082d87  _SysCtl_setAuxClock                                                    
+0     00082e9a  _SysCtl_selectXTAL                                                     
+0     00082f03  _SysCtl_selectOscSource                                                
+0     00082f39  _SysCtl_selectOscSourceAuxPLL                                          
+0     00082f68  _SysCtl_getLowSpeedClock                                               
+0     00082f82  _SysCtl_getDeviceParametric                                            
+0     00083095  _Device_init                                                           
+0     000830b3  _Device_enableAllPeripherals                                           
+0     0008319e  _Device_initGPIO                                                       
+0     000831bf  _Device_enableUnbondedGPIOPullupsFor176Pin                             
+0     000831d2  _Device_enableUnbondedGPIOPullupsFor100Pin                             
+0     000831ef  _Device_enableUnbondedGPIOPullups                                      
+0     00083205  _Device_configureTMXAnalogTrim                                         
+0     00083236  _Device_bootCPU2                                                       
+0     000833b0  ___error__                                                             
+0     000833b7  _Example_setResultPass                                                 
+0     000833bc  _Example_setResultFail                                                 
+0     000833c1  _Example_done                                                          
+0     00083407  _CAN_initModule                                                        
+0     0008341c  _CAN_setBitRate                                                        
+0     00083460  _CAN_setBitTiming                                                      
+0     00083498  _CAN_clearInterruptStatus                                              
+0     000834c9  _CAN_setupMessageObject                                                
+0     00083586  _CAN_sendMessage                                                       
+0     000835d2  _CAN_readMessage                                                       
+0     0008362b  _CAN_readMessageWithID                                                 
+0     00083662  _CAN_transferMessage                                                   
+0     000836a8  _CAN_clearMessage                                                      
+0     00083766  _Init__17TeslaM3GateDriverSFv                                          
+0     00083773  _IsFaulty__17TeslaM3GateDriverSFv                                      
+0     000837c2  _InitGPIOs__17TeslaM3GateDriverSFv                                     
+0     0008380c  _InitSPIPort__17TeslaM3GateDriverSFv                                   
+0     00083839  _SetupGateDrivers__17TeslaM3GateDriverSFv                              
+0     00083866  _VerifyGateDriverConfig__17TeslaM3GateDriverSFv                        
+0     000838ab  _SendCommand__17TeslaM3GateDriverSFUi                                  
+0     000838d2  ___CPR69__WriteRegister__17TeslaM3GateDriverSFRCQ2_J15J8Register       
+0     0008394e  ___CPR72__VerifyRegister__17TeslaM3GateDriverSFRCQ2_J16J8RegisterT1    
+0     000839a0  _malloc                                                                
+0     000839cb  _free                                                                  
+0     00083a95  _realloc                                                               
+0     00083b19  _minit                                                                 
+0     00083b1d  _calloc                                                                
+0     00083b4a  _aligned_alloc                                                         
+0     00083b4a  _memalign                                                              
+0     00083bf0  ___TI_heap_total_available                                             
+0     00083c0d  ___TI_heap_largest_available                                           
+0     00083c2a  ___TI_heap_check                                                       
+0     00083c39  _GPIO_setDirectionMode                                                 
+0     00083c60  _GPIO_getDirectionMode                                                 
+0     00083c76  _GPIO_setInterruptPin                                                  
+0     00083ca1  _GPIO_setPadConfig                                                     
+0     00083ce9  _GPIO_getPadConfig                                                     
+0     00083d1d  _GPIO_setQualificationMode                                             
+0     00083d49  _GPIO_getQualificationMode                                             
+0     00083d6a  _GPIO_setQualificationPeriod                                           
+0     00083d8c  _GPIO_setMasterCore                                                    
+0     00083db8  _GPIO_setAnalogMode                                                    
+0     00083de0  _GPIO_setPinConfig                                                     
+0     00083ec2  _Interrupt_initModule                                                  
+0     00083eff  _Interrupt_initVectorTable                                             
+0     00083f1d  _Interrupt_enable                                                      
+0     00083f51  _Interrupt_disable                                                     
+0     00083f9c  _cos                                                                   
+0     00083f9c  _cosf                                                                  
+0     00083fff  ___default_new_handler__Fv                                             
+0     00084052  _Init__9SchedulerSFv                                                   
+0     0008406a  _AddTask__9SchedulerSFPFv_vUl                                          
+0     000840cb  _InitCPUTimers__9SchedulerSFv                                          
+0     00084103  _ConfigureCPUTimer__9SchedulerSFUlT1                                   
+0     00084123  _SPI_setConfig                                                         
+0     0008414c  _SPI_setBaudRate                                                       
+0     0008415d  _SPI_enableInterrupt                                                   
+0     00084183  _SPI_disableInterrupt                                                  
+0     000841a9  _SPI_getInterruptStatus                                                
+0     000841ce  _SPI_clearInterruptStatus                                              
+0     000841fb  _ADC_setMode                                                           
+0     0008429d  _ADC_setPPBTripLimits                                                  
+0     00084314  _InitGPIOs__9SpiDriverSFv                                              
+0     0008435f  _InitSPIPort__9SpiDriverSFv                                            
+0     0008438a  _WriteData__9SpiDriverSFUi                                             
+0     00084394  _ReadData__9SpiDriverSFv                                               
+0     0008439a  _cpuTimer0ISR                                                          
+0     000843ce  _cpuTimer1ISR                                                          
+0     000843ff  _cpuTimer2ISR                                                          
+0     00084430  FS$$DIV                                                                
+0     000844b8  _sin                                                                   
+0     000844b8  _sinf                                                                  
+0     00084511  _c_int00                                                               
+0     0008458d  _Configure__5DigIoFUlQ2_7PinMode7PinMode                               
+0     000845ba  _engineCtrlISR__Fv                                                     
+0     000845fb  C$$EXIT                                                                
+0     000845fb  _abort                                                                 
+0     000845fd  _exit                                                                  
+0     00084624  _sqrt                                                                  
+0     00084624  _sqrtf                                                                 
+0     0008464b  _copy_in                                                               
+0     0008466f  ___nw__FUl                                                             
+0     00084690  _memcpy                                                                
+0     000846ad  __args_main                                                            
+0     000846bf  _CPUTimer_setEmulationMode                                             
+0     000846c9  __register_unlock                                                      
+0     000846cd  __register_lock                                                        
+0     000846d1  __nop                                                                  
+0     000846da  _memset                                                                
+0     000846e1  ___dl__FPv                                                             
+0     000846e6  __system_pre_init                                                      
+0     000846e8  __system_post_cinit                                                    
+0     00086000  _RamfuncsLoadStart                                                     
+0     00086004  _RamfuncsLoadEnd                                                       
+0     00090000  _crc_table                                                             
+0     0009015c  _GateDriverRegisterSetup__17TeslaM3GateDriver                          
+0     00090189  _NullGateDriverRegister__17TeslaM3GateDriver                           
+0     0009018c  _RegisterSetupSize__17TeslaM3GateDriver                                
+1     00000400  __stack                                                                
+1     00000600  __STACK_END                                                            
+1     0000a800  __sys_memory                                                           
+1     0000ac00  _theta_pos                                                             
+1     0000ac01  _a                                                                     
+1     0000ac02  _b                                                                     
+1     0000ac03  _c                                                                     
+1     0000ac04  _cnt                                                                   
+1     0000ac05  _lastFunctionalWatchdogQuest__39TeslaM3PowerWatchdog__tm__11_9SpiDriver
+1     0000ac06  _targetSpeed                                                           
+1     0000ac08  _theta                                                                 
+1     0000ac0a  _iMeasureU                                                             
+1     0000ac0c  _iMeasureV                                                             
+1     0000ac0e  _iMeasureW                                                             
+1     0000ac10  _iMeasureDCV                                                           
+1     0000ac12  _id                                                                    
+1     0000ac14  _iq                                                                    
+1     0000ac16  _targetIq                                                              
+1     0000ac18  _targetId                                                              
+1     0000ac1a  _maxModIndex                                                           
+1     0000ac1c  _carrierMid                                                            
+1     0000ac1e  _canTxMsgCount                                                         
+1     0000ac20  _minPwm                                                                
+1     0000ac22  _thetas                                                                
+1     0000ac2e  _adcHandle                                                             
+1     0000ac36  _canTxMsgData                                                          
+1     0000ac3e  __lock                                                                 
+1     0000ac40  _functions__9Scheduler                                                 
+1     0000ac46  _periods__9Scheduler                                                   
+1     0000ac4c  _pwmHandle                                                             
+1     0000ac52  _Example_Result                                                        
+1     0000ac54  _Example_PassCount                                                     
+1     0000ac56  _Example_Fail                                                          
+1     0000ac58  _vtg_out__5DigIo                                                       
+1     0000ac5a  _launchpad_gate__5DigIo                                                
+1     0000ac5c  _led_out__5DigIo                                                       
+1     0000ac5e  ___TI_enable_exit_profile_output                                       
+1     0000ac60  ___TI_cleanup_ptr                                                      
+1     0000ac62  ___TI_dtors_ptr                                                        
+1     0000ac64  _adcChannel                                                            
+1     0000ac6c  __unlock                                                               
+1     0000ac6e  __new_handler                                                          
+1     0000ac70  _errno                                                                 
+abs   00000004  _RamfuncsLoadSize                                                      
+abs   00000004  _RamfuncsRunSize                                                       
+abs   00000200  __STACK_SIZE                                                           
+abs   00000400  __SYSMEM_SIZE                                                          
+abs   ffffffff  .text                                                                  
+abs   ffffffff  ___TI_pprof_out_hndl                                                   
+abs   ffffffff  ___TI_prof_data_size                                                   
+abs   ffffffff  ___TI_prof_data_start                                                  
+abs   ffffffff  ___binit__                                                             
+abs   ffffffff  ___c_args__                                                            
+abs   ffffffff  ___etext__                                                             
+abs   ffffffff  ___pinit__                                                             
+abs   ffffffff  ___text__                                                              
+abs   ffffffff  binit                                                                  
+abs   ffffffff  etext                                                                  
+abs   ffffffff  pinit                                                                  
+
+[195 symbols]
